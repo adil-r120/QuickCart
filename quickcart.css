@@ -203,19 +203,21 @@ body {
 .item, .snack {
   background-color: var(--white);
   border-radius: var(--border-radius);
-  padding: 1.2rem;
-  text-align: center;
-  transition: var(--transition);
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f0f0;
   position: relative;
   overflow: hidden;
 }
 
 .item:hover, .snack:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
 .item::before, .snack::before {
@@ -235,44 +237,53 @@ body {
 
 .item img, .snack img {
   width: 100%;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin-bottom: 0.8rem;
+  transition: transform 0.5s ease;
 }
 
 .placeholder-image {
   width: 100%;
-  height: 120px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  height: 140px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  transition: transform 0.3s ease;
+  font-size: 2.5rem;
+  transition: transform 0.5s ease;
 }
 
 .item:hover .placeholder-image, .snack:hover .placeholder-image {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-.item img:hover, .snack img:hover {
-  transform: scale(1.05);
+.item:hover img, .snack:hover img {
+  transform: scale(1.08);
+}
+
+.item h3, .snack h3 {
+  padding: 0 1rem;
+  font-size: 1.05rem;
+  color: var(--secondary-color);
 }
 
 .item p, .snack p {
-  margin: 0.5rem 0;
-  color: #666;
-  font-size: 0.9rem;
+  margin: 0.3rem 0 1rem;
+  padding: 0 1rem;
+  color: #777;
+  font-size: 0.85rem;
+  flex-grow: 1;
 }
 
 .price {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--secondary-color);
-  margin-top: 0.5rem;
+  padding: 0 1rem 1rem;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
